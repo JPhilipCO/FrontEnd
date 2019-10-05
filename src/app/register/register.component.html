@@ -1,0 +1,33 @@
+<p>
+    Register Here.
+</p>
+
+<div>
+        <div >
+           <div>
+              <label class="lbl">Login:</label>
+              <input type="text" [(ngModel)]="new_userid"> 
+              
+           </div>
+           <div>
+                <label class="pass">Password: </label>
+                <input type="text"  type="text" (keyup)="keyup($event.target.value)"  maxlength=12
+                      [(ngModel)]="new_password1" [pattern]="passpattern" #pass="ngModel"> 
+                 <span *ngIf="pass.errors?.pattern" [ngStyle]="{'color':'red'}"> 
+                            Password length must be between 5 and 12. Only alphanumerics and at least 1 of each.
+                 </span>
+           </div>
+           <div>
+                <label>Reenter Password: </label>
+                <input type="text" [(ngModel)]="new_password2"> 
+           </div>
+           <br>
+           <div>
+                <input type="button" (click)="OnSubmit()" value="Submit">
+                <span [ngStyle]="{'color':'red'}">{{Error}}</span>
+            </div>
+        
+        </div>
+
+</div>
+        

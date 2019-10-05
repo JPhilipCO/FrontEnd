@@ -1,0 +1,27 @@
+<p>All Active Logins</p>
+
+
+<ng-template [ngIf]="activeLogins" [ngIfElse]="notfound">
+
+        <ul>
+                <tr *ngFor="let logs of activeLogins">
+                        
+                        
+                       <p>
+                            <span><input type="button" (click)="OnDelete(logs.id)" value="Delete"></span>
+                        
+                            <span>&nbsp;&nbsp;</span> 
+                        
+                            <span>{{logs.name}}</span>
+                       </p>
+                        
+                    </tr>
+         </ul>
+ </ng-template>
+ <ng-template #notfound>
+        No active logins found
+ </ng-template>
+
+
+
+

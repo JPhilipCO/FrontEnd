@@ -1,0 +1,29 @@
+
+<div>
+<div >
+   <div>
+      <label class="lbl">Login:</label>
+      <input class="values" type="text"   [(ngModel)]="inp_userid"  > 
+   </div>
+   <div>
+        <label >Password: </label>
+        <input class="values" type="password"  maxlength=12
+                   [(ngModel)]="inp_password" > 
+        
+    
+   </div>
+   <div>
+       <input type="button" (click)="OnSubmit()" value="Submit">
+       <span [ngStyle]="{'color':'red'}">{{Error}}</span>
+   </div>
+
+</div>
+<br>
+<br>
+<div>
+        <p>If you do not have a Login, please register</p>
+        <a href="#" routerLink="/register">Register</a>
+</div>
+
+
+</div>
